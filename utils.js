@@ -20,15 +20,3 @@ function renderUi(array) {
 
 
 
-let elSearch = document.querySelector(".search");
-function search(array) {
-	elSearch.addEventListener("keyup", (evt) => {
-		evt.preventDefault();
-		let value = evt.target.value;
-		elList.innerHTML = "";
-		const newItem = array.filter((item) => {
-			return item.name.official.includes(value);
-		});
-		renderUi(newItem);
-	});
-}

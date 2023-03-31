@@ -31,12 +31,27 @@ elForm.addEventListener("change", (evt) => {
 /*---------------------------select option end ------------------*/ 
 
 
+
+let elSearch = document.querySelector(".search");
+function search(array=users) {
+	elSearch.addEventListener("keyup", (evt) => {
+		evt.preventDefault();
+		let value = evt.target.value;
+		elList.innerHTML = "";
+		const newItem = array.filter((item) => {
+			return item.name.official.includes(value);
+		});
+		renderUi(newItem);
+	});
+}
+
+
+
+
+/*------------------------------------------dark mode--------------- */
 let body=document.querySelector(".body");
-let mode=document.querySelector(".mode");
-
-mode.addEventListener("click", (evt) => {
-body.classList.toggle("mystyle");
-
-console.log(body);
-});
-
+let mode=document.getElementById(".mode");
+function dark() {
+body.classList.toggle("dark");
+}
+/*------------------------------------------dark mode--------------- */

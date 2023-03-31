@@ -39,6 +39,9 @@
 
 }
 
-.maystile{
+.dark{
+    width: 100%;
     background-color:#3b3838;
+    color:rgb(255, 255, 255);
+    
 }
